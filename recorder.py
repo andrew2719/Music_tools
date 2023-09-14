@@ -1,3 +1,8 @@
+# for getting the device index, run the following command in the terminal:
+# import sounddevice as sd
+# sd.query_devices()
+
+
 import os
 import sounddevice as sd
 import numpy as np
@@ -24,10 +29,10 @@ def generate_filename(base_path, base_name):
     return new_name
 
 # Recording parameters
-DURATION = 20  # seconds
+DURATION = 60  # seconds
 RATE = 96000  # 96kHz
 CHANNELS = 2  # Stereo
-DEVICE_INDEX = 22  # Using the Stereo Mix device
+DEVICE_INDEX = 19  # Using the Stereo Mix device
 
 # Record audio
 print("Recording...")
