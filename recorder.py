@@ -27,12 +27,12 @@ def generate_filename(base_path, base_name):
         new_name = os.path.join(base_path, f"{base_name}({index}).wav")
 
     return new_name
-
+minutes = int(input("enter the duration in minutes: "))
 # Recording parameters
-DURATION = 60  # seconds
+DURATION = minutes * 60 #seconds
 RATE = 96000  # 96kHz
 CHANNELS = 2  # Stereo
-DEVICE_INDEX = 19  # Using the Stereo Mix device
+DEVICE_INDEX = 22  # Using the Stereo Mix device
 
 # Record audio
 print("Recording...")
@@ -42,7 +42,7 @@ print("Recording complete")
 
 # Save audio to a WAV file
 output_path = "D:/samples"
-base_filename = "sample"
+base_filename = input("enter the name of the file: ")
 filename = generate_filename(output_path, base_filename)
 print(f"trying to save as {filename}")
 write(filename, RATE, audio_data)
